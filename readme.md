@@ -1,4 +1,8 @@
-# REST Template
+# Hierarchical MVC Demo Application.
+
+This demo application accompanies the Hierarchical MVC presentation on ColdBox.  It will showcase a ColdBox 5 modular API using Hiearchical MVC.
+
+# RESTFul Template
 
 This template gives you the base for building RESTFul web services with ColdBox.  Check out the `handlers` folder to see how to leverage our base event handler component for RESTFul routing, consistency and marshalling.
 
