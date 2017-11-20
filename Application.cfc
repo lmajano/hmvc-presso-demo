@@ -10,6 +10,13 @@ component{
 	this.sessionTimeout = createTimeSpan(0,0,30,0);
 	this.setClientCookies = true;
 
+	// Java Integration
+	this.javaSettings = { 
+		loadPaths = [ ".\lib" ], 
+		loadColdFusionClassPath = true, 
+		reloadOnChange= false 
+	};
+
 	// COLDBOX STATIC PROPERTY, DO NOT CHANGE UNLESS THIS IS NOT THE ROOT OF YOUR COLDBOX APP
 	COLDBOX_APP_ROOT_PATH = getDirectoryFromPath( getCurrentTemplatePath() );
 	// The web server mapping to this application. Used for remote purposes or static purposes
@@ -27,7 +34,7 @@ component{
 	}
 
 	// application end
-	public boolean function onApplicationEnd( struct appScope ){
+	public void function onApplicationEnd( struct appScope ){
 		arguments.appScope.cbBootstrap.onApplicationEnd( arguments.appScope );
 	}
 

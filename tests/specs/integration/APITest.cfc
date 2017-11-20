@@ -1,10 +1,10 @@
 /*******************************************************************************
-*	Integration Test as BDD (CF10+ or Railo 4.1 Plus)
+*	Integration Test as BDD
 *
 *	Extends the integration class: coldbox.system.testing.BaseTestCase
 *
-*	so you can test your ColdBox application headlessly. The 'appMapping' points by default to 
-*	the '/root' mapping created in the test folder Application.cfc.  Please note that this 
+*	so you can test your ColdBox application headlessly. The 'appMapping' points by default to
+*	the '/root' mapping created in the test folder Application.cfc.  Please note that this
 *	Application.cfc must mimic the real one in your root, including ORM settings if needed.
 *
 *	The 'execute()' method is used to execute a ColdBox event, with the following arguments
@@ -14,8 +14,8 @@
 *	* eventArguments : The struct of args to pass to the event
 *	* renderResults : Render back the results of the event
 *******************************************************************************/
-component extends="coldbox.system.testing.BaseTestCase" appMapping="/"{
-	
+component extends="coldbox.system.testing.BaseTestCase" appMapping="/root"{
+
 	/*********************************** LIFE CYCLE Methods ***********************************/
 
 	function beforeAll(){
@@ -28,18 +28,22 @@ component extends="coldbox.system.testing.BaseTestCase" appMapping="/"{
 		super.afterAll();
 	}
 
-	/*********************************** BDD SUITES ***********************************/
-	
+/*********************************** BDD SUITES ***********************************/
+
 	function run(){
 
-		describe( "photos Suite", function(){
+		describe( "Contacts API", function(){
 
 			beforeEach(function( currentSpec ){
-				// Setup as a new ColdBox request for this suite, VERY IMPORTANT. ELSE EVERYTHING LOOKS LIKE THE SAME REQUEST.
+				// Setup as a new ColdBox request, VERY IMPORTANT. ELSE EVERYTHING LOOKS LIKE THE SAME REQUEST.
 				setup();
-			});
+            });
+            
+            it( "render several contacts", function(){
+                var event = execute( route="api/v1", renderResults=true );
+                expect( event.getRenderedContent() ).toBeJSON();
+            } );
 
-		
 		});
 
 	}

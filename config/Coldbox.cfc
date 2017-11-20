@@ -6,7 +6,7 @@
 		// coldbox directives
 		coldbox = {
 			//Application Setup
-			appName 				= "Your RESTFul app name here",
+			appName 				= "Your app name here",
 			eventName 				= "event",
 
 			//Development Settings
@@ -14,17 +14,17 @@
 			handlersIndexAutoReload = true,
 
 			//Implicit Events
-			defaultEvent			= "v1:Echo.index",
-			requestStartHandler		= "",
+			defaultEvent			= "",
+			requestStartHandler		= "Main.onRequestStart",
 			requestEndHandler		= "",
-			applicationStartHandler = "",
+			applicationStartHandler = "Main.onAppInit",
 			applicationEndHandler	= "",
 			sessionStartHandler 	= "",
 			sessionEndHandler		= "",
 			missingTemplateHandler	= "",
 
 			//Extension Points
-			applicationHelper 			= "",
+			applicationHelper 			= "includes/helpers/ApplicationHelper.cfm",
 			viewsHelper					= "",
 			modulesExternalLocation		= [],
 			viewsExternalLocation		= "",
@@ -35,7 +35,7 @@
 
 			//Error/Exception Handling
 			invalidHTTPMethodHandler = "",
-			exceptionHandler		= "",
+			exceptionHandler		= "main.onException",
 			onInvalidEvent			= "",
 			customErrorTemplate		= "",
 
@@ -54,7 +54,7 @@
 		// create a function with the name of the environment so it can be executed if that environment is detected
 		// the value of the environment is a list of regex patterns to match the cgi.http_host.
 		environments = {
-			development = "localhost,127\.0\.0\.1"
+			development = "localhost,^127\.0\.0\.1"
 		};
 
 		// Module Directives
@@ -149,6 +149,30 @@
 	*/
 	function development(){
 		coldbox.customErrorTemplate = "/coldbox/system/includes/BugReport.cfm";
+
+		// Debugger Settings
+		debugger = {
+			// Activate debugger for everybody
+			debugMode = true,
+			// Setup a password for the panel
+			debugPassword = "",
+			enableDumpVar = true,
+			persistentRequestProfiler = true,
+			maxPersistentRequestProfilers = 10,
+			maxRCPanelQueryRows = 50,
+			showTracerPanel = true,
+			expandedTracerPanel = true,
+			showInfoPanel = true,
+			expandedInfoPanel = true,
+			showCachePanel = true,
+			expandedCachePanel = false,
+			showRCPanel = true,
+			expandedRCPanel = false,
+			showModulesPanel = true,
+			expandedModulesPanel = false,
+			showRCSnapshots = false,
+			wireboxCreationProfiler=false
+		};
 	}
 
 }

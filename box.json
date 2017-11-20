@@ -1,44 +1,44 @@
 {
-    "name":"REST APP Template",
-    "version":"2.3.0",
-    "location":"https://github.com/coldbox-templates/rest/archive/v2.3.0.zip",
+    "name":"Advanced Script APP Template",
+    "version":"1.5.0",
     "author":"You",
-    "slug":"cbtemplate-rest",
+    "location":"https://github.com/coldbox-templates/advanced-script/archive/v1.5.0.zip",
+    "slug":"cbtemplate-advanced-script",
     "createPackageDirectory":false,
     "type":"mvc",
-    "homepage":"https://github.com/coldbox-templates/rest",
-    "documentation":"https://github.com/coldbox-templates/rest",
+    "keywords":"",
+    "homepage":"",
+    "documentation":"",
     "repository":{
-        "type":"git",
-        "url":"https://github.com/coldbox-templates/rest"
+        "type":"",
+        "url":""
     },
-    "bugs":"https://github.com/coldbox-templates/rest/issues",
-    "shortDescription":"This template gives you the base for building RESTFul web services with ColdBox",
-    "contributors":[
-        
-    ],
-    "ignore":[
-        
-    ],
+    "bugs":"",
+    "shortDescription":"",
+    "contributors":[],
+    "ignore":[],
     "devDependencies":{
-        "testbox":"^2.4.0",
-        "relax":"^2.2.0+00032"
+        "testbox":"^2.3.0"
     },
     "installPaths":{
         "testbox":"testbox",
+        "coldbox":"coldbox",
+        "mockdatacfc":"modules/mockdatacfc",
         "relax":"modules/relax",
-        "cbswagger":"modules/cbswagger",
-        "coldbox":"coldbox"
+        "cbswagger":"modules/cbswagger"
     },
     "dependencies":{
-        "cbswagger":"^1.1.0",
-        "coldbox":"be"
+        "coldbox":"be",
+        "testbox":"^2.5.0+107",
+        "mockdatacfc":"^2.3.0",
+        "relax":"^3.0.2+123",
+        "cbswagger":"^1.2.1-snapshot"
     },
     "scripts":{
-        "postVersion":"package set location='https://github.com/coldbox-templates/rest/archive/v`package version`.zip'",
+        "postVersion":"package set location='https://github.com/coldbox-templates/advanced-script/archive/v`package version`.zip'",
         "postPublish":"!git push --follow-tags"
     },
     "testbox":{
-        "runner":"http://127.0.0.1:57641/tests/runner.cfm"
+        "runner":"http://127.0.0.1:8080/tests/runner.cfm"
     }
 }
