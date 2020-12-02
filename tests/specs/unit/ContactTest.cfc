@@ -1,35 +1,34 @@
 /**
-* The base model test case will use the 'model' annotation as the instantiation path
-* and then create it, prepare it for mocking and then place it in the variables scope as 'model'. It is your
-* responsibility to update the model annotation instantiation path and init your model.
-*/
-component extends="coldbox.system.testing.BaseModelTest" model="Users.lmajano.Documents.MyDocs.OrtusSolutions.Presentations.CFSummit2018.contactsapp.modules_app.api.modules_app.v1.models.Contact"{
-	
+ * The base model test case will use the 'model' annotation as the instantiation path
+ * and then create it, prepare it for mocking and then place it in the variables scope as 'model'. It is your
+ * responsibility to update the model annotation instantiation path and init your model.
+ */
+component extends="coldbox.system.testing.BaseModelTest" model="models.Contact" {
+
 	/*********************************** LIFE CYCLE Methods ***********************************/
 
-	function beforeAll(){
+	function beforeAll() {
 		super.beforeAll();
-		
+
 		// setup the model
 		super.setup();
-		
+
 		// init the model object
 		model.init();
 	}
 
-	function afterAll(){
+	function afterAll() {
 		super.afterAll();
 	}
 
 	/*********************************** BDD SUITES ***********************************/
-	
-	function run(){
 
-		describe( "Contact Suite", function(){
-			
-
-		});
-
+	function run() {
+		describe( "Contact Suite", function() {
+			it( "can be created", function() {
+				expect( model ).toBeComponent();
+			} );
+		} );
 	}
 
 }

@@ -17,22 +17,33 @@
     "contributors":[],
     "ignore":[],
     "devDependencies":{
-        "relax":"^3.0.2",
-        "testbox":"^2.8.0"
+        "testbox":"^4.0.0",
+        "relax":"^4.1.0",
+        "route-visualizer":"*",
+        "commandbox-dotenv":"*",
+        "commandbox-cfconfig":"*",
+        "commandbox-cfformat":"*"
     },
     "installPaths":{
-        "coldbox":"coldbox",
+        "coldbox":"coldbox/",
         "relax":"modules/relax/",
-        "cbswagger":"modules/cbswagger/",
-        "testbox":"testbox",
-        "route-visualizer":"modules/route-visualizer",
-        "mockdatacfc":"modules/mockdatacfc"
+        "testbox":"testbox/",
+        "cbSwagger":"modules/cbSwagger/",
+        "route-visualizer":"modules/route-visualizer/",
+        "mementifier":"modules/mementifier/",
+        "cbvalidation":"modules/cbvalidation/",
+        "cbsecurity":"modules/cbsecurity/",
+        "mockdatacfc":"modules/mockdatacfc/"
     },
     "dependencies":{
-        "coldbox":"^5.0.0",
-        "cbswagger":"^1.2.1",
-        "route-visualizer":"^1.0.0",
-        "mockdatacfc":"^3.0.0+7"
+        "coldbox":"^6.0.0",
+        "cbsecurity":"^2.5.0+94",
+        "mementifier":"^2.1.0+100",
+        "cbvalidation":"^2.1.0+126",
+        "mockdatacfc":"^3.4.0+35"
     },
-    "scripts":{}
+    "scripts":{
+        "format":"cfformat run config,handlers,models,modules_app,tests/specs --overwrite",
+        "format:watch":"cfformat watch config,handlers,models,modules_app,tests/specs ./.cfformat.json"
+    }
 }

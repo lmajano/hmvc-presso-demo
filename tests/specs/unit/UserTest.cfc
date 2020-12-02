@@ -3,7 +3,7 @@
  * and then create it, prepare it for mocking and then place it in the variables scope as 'model'. It is your
  * responsibility to update the model annotation instantiation path and init your model.
  */
-component extends="coldbox.system.testing.BaseModelTest" model="models.ContactsService" {
+component extends="coldbox.system.testing.BaseModelTest" model="models.User" {
 
 	/*********************************** LIFE CYCLE Methods ***********************************/
 
@@ -24,7 +24,7 @@ component extends="coldbox.system.testing.BaseModelTest" model="models.ContactsS
 	/*********************************** BDD SUITES ***********************************/
 
 	function run() {
-		describe( "ContactsService Suite", function() {
+		describe( "A User", function() {
 			it( "can be created", function() {
 				expect( model ).toBeComponent();
 			} );
