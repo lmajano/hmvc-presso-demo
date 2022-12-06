@@ -1,16 +1,18 @@
 /**
  * I model a contact
  */
-component accessors="true" {
+component accessors="true"{
 
 	// Properties
-
+	
 
 	/**
 	 * Constructor
 	 */
-	Contact function init() {
+	Contact function init(){
+
 		return this;
 	}
+
 
 }

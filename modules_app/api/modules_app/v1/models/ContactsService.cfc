@@ -1,15 +1,16 @@
 /**
  * I manage contact
  */
-component singleton accessors="true" {
+component singleton accessors="true"{
 
-	// Properties
+	// DI
 	property name="mockdata" inject="mockdata@mockdataCFC";
+
 
 	/**
 	 * Constructor
 	 */
-	ContactsService function init() {
+	ContactsService function init(){
 		variables.data = [];
 		return this;
 	}
@@ -28,27 +29,30 @@ component singleton accessors="true" {
 	/**
 	 * save
 	 */
-	function save() {
+	function save(){
+
 	}
 
 	/**
 	 * delete
 	 */
-	function delete() {
+	function delete(){
+
 	}
 
 	/**
 	 * list
 	 */
-	function list() {
+	function list(){
 		return variables.data;
 	}
 
 	/**
-	 * Get a contact
+	 * get
 	 */
-	function get( contactId ) {
+	function get(){
 		return variables.data.filter( ( row ) => row.id == contactId ).reduce( ( result, row ) => row, {} );
 	}
+
 
 }

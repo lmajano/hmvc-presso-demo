@@ -2,10 +2,10 @@
  * Manage contacts
  * It will be your responsibility to fine tune this template, add validations, try/catch blocks, logging, etc.
  */
-component extends="coldbox.system.RestHandler" secured {
+component extends="coldbox.system.RestHandler" {
 
 	// DI
-	property name="contactsService" inject="ContactsService";
+	property name="contactsService" inject="ContactsService@v1";
 
 	/**
 	 * Display a list of contacts

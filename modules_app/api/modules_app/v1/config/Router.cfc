@@ -1,6 +1,9 @@
 component {
 
 	function configure() {
+
+		resources( "contacts" );
+
 		// API Echo
 		get( "/", "Echo.index" );
 
@@ -12,10 +15,6 @@ component {
 		// API Secured Routes
 		get( "/whoami", "Echo.whoami" );
 
-		// Contacts API
-		resources( "contacts" );
-
-		// Conventions Route
 		route( "/:handler/:action" ).end();
 	}
 
