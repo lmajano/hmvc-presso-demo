@@ -11,8 +11,7 @@ server start
 # Show api entrypoints: http://127.0.0.1:56326/api/v1/echo
 
 # Show Tests: http://127.0.0.1:56326/tests/runner.cfm
-# Add to CommandBox
-package set testbox.runner="http://127.0.0.1:56326/tests/runner.cfm"
+# Run tests in CommandBox
 testbox run
 
 # Create Resources
