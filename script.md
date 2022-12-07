@@ -1,33 +1,71 @@
-```bash
-# Generate App
+# HMVC Script
+
+## Generate App
+
+```
 coldbox create app name="contacts"  skeleton=rest-hmvc
+```
 
-# Install some dependencies for dev
+## Install some dependencies for dev
+
+```
 install route-visualizer,mockdatacfc --savedev
+```
 
-# Start Server
+## Start Server
+
+```
 server start
+```
 
-# Show api entrypoints: http://127.0.0.1:56326/api/v1/echo
+## Show api entrypoints
 
-# Show Tests: http://127.0.0.1:56326/tests/runner.cfm
-# Run tests in CommandBox
+http://127.0.0.1:56326/api/v1/echo
+
+## Show Tests
+
+http://127.0.0.1:56326/tests/runner.cfm
+
+### Run tests in CommandBox
+
+```
 testbox run
+```
 
-# Create Resources
+## Create Resources
+
+```
 coldbox create resource resource="contacts" singularName="contact" module="v1" modulesDirectory="modules_app/api/modules_app"
+```
 
-# Open config/Router.cfc and verify in route visualizer
+## Open `config/Router.cfc` and verify in route visualizer
+
+```
 resources( "contacts" );
+```
 
-# Reinit app
+## Reinit app
+
+```
 coldbox reinit
+```
 
-# Show routes: http://127.0.0.1:64554/route-visualizer
+## Show routes
 
-# Open ContactService and work on the service list() and get() methods
-# Open the contacts handler and get it working
+http://127.0.0.1:64554/route-visualizer
 
+## Open ContactService
+
+Work on the service list() and get() methods
+
+## Open the `contacts` Handler
+
+```
 server stop
+```
+
 # Run it on Docker
+
+```
 docker run -p 8080:8080 -p 8443:8443 -v "`pwd`:/app" ortussolutions/commandbox:lucee5
+```
